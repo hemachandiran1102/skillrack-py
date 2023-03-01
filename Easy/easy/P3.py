@@ -19,6 +19,15 @@
 #Input Format: A year as a number is passed to the standard input. Output Format: The string value as per the conditions above printed to the standard output. 
 #Boundary Conditions: 0 < Y <= 8000
 
+from ast import Num
+from itertools import count
+from operator import le
+from os import name
+from re import A
+from subprocess import list2cmdline
+
+
+
 def leapyear():
     Y= int(input())
     if Y%400==0 :
@@ -158,17 +167,119 @@ def untilunderscore():
 # Input: 1k2b4k 
 # Output: kbbkkkk 
 # Max Execution Time Limit: 5000 millisecs
-#print(ord("9"))
+#print(ord("0"))
 def expandalphabets():
-    S=input()
-    
+    S='1k2b4kkkkk'
+    Num=[]
+    Name=[]
+    count=1
+    namec=1
     for i in range(len(S)):
-        nstr=""
-        count=1
-        if ord(S[i])>=48 and ord(S[i])<57:
-            nstr+=S[i]
-            if ord(S[i+count])>=48 and ord(S[i+count])<57:
-                nstr+=S[i+count]
+        no=""
+        
+        if ord(S[i])<= 57 and ord(S[i]) >= 48:
+            no+=S[i]
+            
+            for j in range(i+count,len(S)):
+                #if not ord(S[j])<= 57 and ord(S[j]) >=48:
                 
-        print(nstr)
-expandalphabets()
+                        
+                if ord(S[j])<= 57 and ord(S[j]) >= 48:
+                         
+                        no+=S[j]
+                        count+=1
+                elif j > len(S):
+                    
+                    break                      
+                else:
+                    
+                    break        
+        if len(no)>0:
+                Num.append(int(no))
+    
+    
+    
+    
+    for I in range(len(S)):
+        
+        name=""
+        
+        if not ord(S[I])<= 57 and ord(S[I]) >=48:
+            name+=S[I]
+             
+              
+            
+            for J in range(I+namec,len(S)):
+                    
+                if not ord(S[J])<=57 and ord (S[J]) >= 48:
+                    #name+=S[I]
+                    name+=S[J]
+                    namec+=1
+                    
+                elif ord(S[J]) <=57 and ord (S[J]) >= 48 :
+                    name+=S[I]
+                    #namec+=1
+                    break
+                        
+                elif namec <= len(S):
+                    print(namec)
+                    break
+                else:
+                    name+=S[I]
+                    #Name.append(name)
+                    name=""
+                    
+            
+            
+        #print(name)
+        if len(name) > 0 and namec <= len(S):
+            Name.append(name) 
+    print(len(Name))
+    #for i1 in range((len(Name))):
+        #print(i1)
+        #for i2 in range(Num[i1]):
+            #print(Name[i1],end="")
+
+            
+    print(Name,Num)
+                    
+                
+    #print(name,Name)
+        #print(name)
+
+#expandalphabets()
+
+
+def exalpha():
+    S= "1k2b4k5q"
+    num=""
+    name=""    
+    for i in S:
+        if ord(i) <=57 and ord (i) >= 48:
+            num+=i
+            name+=" "
+        else:
+            num+=" "
+            name+=i    
+    listnum=num.split(" ")
+    listname=name.split(" ")
+    count=0
+    count1=0
+    for j in range(len(listnum)):
+        if listnum[j-count] != "":            
+            continue
+        else:
+            listnum.pop(j-count)
+            count+=1
+    for J in range(len(listname)):
+        if listname[J-count1] != "":
+            continue
+        else:
+            listname.pop(J-count1)
+            count1+=1
+
+    for no1 in range(len(listnum)):
+        for numpat in range(int(listnum[no1])):
+            print(listname[no1],end="")  
+    
+exalpha()
