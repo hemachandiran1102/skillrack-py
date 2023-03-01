@@ -19,13 +19,8 @@
 #Input Format: A year as a number is passed to the standard input. Output Format: The string value as per the conditions above printed to the standard output. 
 #Boundary Conditions: 0 < Y <= 8000
 
-from ast import Num
-from itertools import count
-from operator import le
-from os import name
-from re import A
-from subprocess import list2cmdline
 
+from ast import Num
 
 
 def leapyear():
@@ -168,90 +163,9 @@ def untilunderscore():
 # Output: kbbkkkk 
 # Max Execution Time Limit: 5000 millisecs
 #print(ord("0"))
-def expandalphabets():
-    S='1k2b4kkkkk'
-    Num=[]
-    Name=[]
-    count=1
-    namec=1
-    for i in range(len(S)):
-        no=""
-        
-        if ord(S[i])<= 57 and ord(S[i]) >= 48:
-            no+=S[i]
-            
-            for j in range(i+count,len(S)):
-                #if not ord(S[j])<= 57 and ord(S[j]) >=48:
-                
-                        
-                if ord(S[j])<= 57 and ord(S[j]) >= 48:
-                         
-                        no+=S[j]
-                        count+=1
-                elif j > len(S):
-                    
-                    break                      
-                else:
-                    
-                    break        
-        if len(no)>0:
-                Num.append(int(no))
-    
-    
-    
-    
-    for I in range(len(S)):
-        
-        name=""
-        
-        if not ord(S[I])<= 57 and ord(S[I]) >=48:
-            name+=S[I]
-             
-              
-            
-            for J in range(I+namec,len(S)):
-                    
-                if not ord(S[J])<=57 and ord (S[J]) >= 48:
-                    #name+=S[I]
-                    name+=S[J]
-                    namec+=1
-                    
-                elif ord(S[J]) <=57 and ord (S[J]) >= 48 :
-                    name+=S[I]
-                    #namec+=1
-                    break
-                        
-                elif namec <= len(S):
-                    print(namec)
-                    break
-                else:
-                    name+=S[I]
-                    #Name.append(name)
-                    name=""
-                    
-            
-            
-        #print(name)
-        if len(name) > 0 and namec <= len(S):
-            Name.append(name) 
-    print(len(Name))
-    #for i1 in range((len(Name))):
-        #print(i1)
-        #for i2 in range(Num[i1]):
-            #print(Name[i1],end="")
-
-            
-    print(Name,Num)
-                    
-                
-    #print(name,Name)
-        #print(name)
-
-#expandalphabets()
-
 
 def exalpha():
-    S= "1k2b4k5q"
+    S= "1vedha2giri4dhara5hema"
     num=""
     name=""    
     for i in S:
@@ -282,4 +196,48 @@ def exalpha():
         for numpat in range(int(listnum[no1])):
             print(listname[no1],end="")  
     
-exalpha()
+#exalpha()
+
+
+#------------------------------------------------------P6-----------------------------------------
+#A string S is passed as input. 
+# S will contain two integer values separated by one of these alphabets - A, S, M, D 
+# where - A or a is for addition  
+# - S or s is for subtraction  
+# - M or m is for multiplication 
+# - D or d is for division 
+# The program must perform the necessary operation and print the result
+# (Ignore any floating point values just print the integer result.)
+# Input Format: The first line contains S. 
+# Output Format: The first line contains the resulting integer value. 
+# Boundary Conditions: Length of S is from 3 to 100
+# Example Input/Output 1: 
+# Input: 5A11 
+# Output: 16 
+# Explanation: As the alphabet is A, 5 and 11 are added giving 16.
+
+print(ord("A"),ord("a"),ord("S"),ord("s"),ord("M"),ord("m"),ord("D"),ord("d"))
+def calc():
+    S="5A111M3"
+    num=""
+    
+    for I in range(len(S)):
+        if ord(S[I])>=48 and ord(S[I])<=57 :
+            num+=S[I]
+            
+        else:
+            num+=" "
+            num+=S[I]
+            num+=" "
+            out=1
+            output=1
+    NUM=num.split(' ')
+    for J in range(len(NUM)):
+        for pro in range(1,len(NUM),2):
+            if ord(NUM[pro]) == 77 or ord(NUM[pro]) == 109:
+                output*=int(NUM[pro-1])*int(NUM[pro+1])
+                continue
+            
+
+    print(NUM)
+calc()
