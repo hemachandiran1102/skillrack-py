@@ -216,7 +216,7 @@ def exalpha():
 # Output: 16 
 # Explanation: As the alphabet is A, 5 and 11 are added giving 16.
 
-print(ord("-"),ord("a"),ord("S"),ord("s"),ord("M"),ord("m"),ord("D"),ord("d"))
+#print(ord("-"),ord("a"),ord("S"),ord("s"),ord("M"),ord("m"),ord("D"),ord("d"))
 def calc():
     S="-90s-109"
     num=""
@@ -245,4 +245,4 @@ def calc():
                 output=int(NUM[J-1])/int(NUM[J+1])            
 
     print(output)
-calc()
+#calc()
