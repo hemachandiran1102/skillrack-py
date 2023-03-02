@@ -216,28 +216,33 @@ def exalpha():
 # Output: 16 
 # Explanation: As the alphabet is A, 5 and 11 are added giving 16.
 
-print(ord("A"),ord("a"),ord("S"),ord("s"),ord("M"),ord("m"),ord("D"),ord("d"))
+print(ord("-"),ord("a"),ord("S"),ord("s"),ord("M"),ord("m"),ord("D"),ord("d"))
 def calc():
-    S="5A111M3"
+    S="-90s-109"
     num=""
     
     for I in range(len(S)):
         if ord(S[I])>=48 and ord(S[I])<=57 :
             num+=S[I]
-            
+        elif ord(S[I])==45:
+            num+=S[I]    
         else:
             num+=" "
             num+=S[I]
             num+=" "
-            out=1
-            output=1
-    NUM=num.split(' ')
-    for J in range(len(NUM)):
-        for pro in range(1,len(NUM),2):
-            if ord(NUM[pro]) == 77 or ord(NUM[pro]) == 109:
-                output*=int(NUM[pro-1])*int(NUM[pro+1])
-                continue
             
-
+    NUM=num.split(' ')
     print(NUM)
+    for J in range(len(NUM)):
+        print(NUM[J])
+        if NUM[J] == "A" or NUM[J] == "a":
+                output=int(NUM[J-1])+int(NUM[J+1])
+        elif NUM[J] == "S" or NUM[J] == "s":
+                output=int(NUM[J-1])-int(NUM[J+1])
+        elif NUM[J] == "M" or NUM[J] == "m":
+                output=int(NUM[J-1])*int(NUM[J+1])
+        elif NUM[J] == "D" or NUM[J] == "d":
+                output=int(NUM[J-1])/int(NUM[J+1])            
+
+    print(output)
 calc()
