@@ -246,3 +246,143 @@ def calc():
 
     print(output)
 #calc()
+
+#-----------------------------------------------------------------------------------------------------P7-----------------------------------------------------------------------------
+#A floating point value F indicating the amount in rupees is passed as input.
+# The program must print the corresponding value in paise. 
+# Note: 1 rupee = 100 paise. 
+# Input Format: The first line contains F. 
+# Output Format: The first line contains the integer value denoting the paise. 
+# Boundary Conditions: 0.00 <= F <= 999999.99 Example 
+# Input/Output 1: Input: 11.30 
+# Output: 1130 
+# Example Input/Output 2: 
+# Input: 0.80 
+# Output: 80 
+# Example Input/Output 3:
+# Input: 0.0 
+# Output: 0
+
+def paisacal():
+    F="0.30"
+    valstr=""
+    val=[]
+    for i in range(len(F)):
+        if F[i] == ".":
+            
+            val.append(valstr)
+            valstr=""
+        elif i == len(F)-1:
+            valstr+=F[i]
+            val.append(valstr)
+        else:
+            valstr+=F[i]
+    output=0
+    for j in range(len(val)):
+        if j == 0:
+            output+=int(val[j])*100
+            
+        else:
+            output+=int(val[j])
+    print(output)
+#paisacal()
+#-------------------------------------------------------------------------------------------P8-------------------------------------------------------------------------------
+#In a zoo there are some birds and animals.
+#  All birds have two legs and all animals have four legs. 
+# GIven the head count and leg count of both birds and animals taken together, 
+# the program must print the head count of birds and animals separated by a space as output. 
+# Input Format:
+# First line will contain the integer value H representing the head count of both birds and animals taken together. 
+# Second line will contain the integer value L representing the leg count of both birds and animals taken together. 
+# Output Format: First line will contain the integer values of the head count of birds and animals separated by a space. 
+# Constraints: 0 < H < 1000 1 < L < 2000 
+# Sample Input/Output: Example 1: 
+# Input: 27 84 
+# Output: 12 15 
+# Explanation: There are 12 birds and 15 animals. 
+# Example 2: Input: 114 256 
+# Output: 100 14 
+# Explanation: There are 100 birds and 14 animals.
+def anbirdcount():
+    head=int(input())
+    legs=int(input())
+    animals=int(legs/2)-head
+    birds=head-animals
+    print(birds,animals)
+#anbirdcount()
+
+#--------------------------------------------------------------------------------------P9--------------------------------------------------------------------------------------
+#Count of common factors Given a set of numbers where all other numbers are multiple of the smallest number,
+#  the program must find the count of the common factors C excluding 1. 
+# Input Format: First line will contain the integer value N representing how many numbers are passed as input. 
+# Next N lines will have the numbers. 
+# Output Format: First line will contain the count of common factors C. 
+# Constraints: N will be from 2 to 20. 
+# Sample Input/Output: 
+# Example 1: 
+# Input: 
+# 2 
+# 100 
+# 75 
+# Output: 2 
+# Explanation: The common factors excluding 1 are 5,25. Hence output is 2 
+# 
+# Example 2: 
+# Input: 
+# 3 
+# 10 
+# 20 
+# 30 
+# Output: 3 
+# Explanation: 
+# The common factors excluding 1 are 2,5,10. Hence output is 3.
+
+
+def countcommonfactor():
+    #N = int(input())
+    no=[10,20,30]
+    #for num in range(N):
+       # no.append(int(input()))
+    
+    for i in range(len(no)):
+        for j in range(len(no)):
+            if no[i] > no[j]:
+                no[i] , no[j] = no[j] , no [i]
+    count=0
+    for I in range(2,no[0]):
+        c=0
+        for J in no:
+            
+            if J%I==0:
+                c+=1
+                print(J,c)
+        if(c==len(no)):
+            count+=1
+    print(count)
+#countcommonfactor()
+
+#---------------------------------------------------------------------------------------------------P10----------------------------------------------------------------------------
+#Reverse Number Sign An integer value N is passed as the input. 
+# The program must reverse the sign of N and print -N as the output. 
+# Input Format: The first line contains N. 
+# Output Format: The first line contains -N. 
+# Boundary Conditions: -999999 <= N <= 999999 
+# Example Input/Output 1: 
+# Input: 125 
+# Output: -125 
+# Example Input/Output 2: 
+# Input: -346 
+# Output: 346 
+# Example Input/Output 3: 
+# Input: 0 
+# Output: 0
+
+def ReverseNumberSign():
+    N="345"
+    if N[0] == "-":
+        print(N[1:])
+    elif N=="0":
+        print(N)
+    elif N[0] != "-" or N[0]=="+":
+        print("-"+N)
+ReverseNumberSign()
