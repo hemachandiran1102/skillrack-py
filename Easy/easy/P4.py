@@ -120,21 +120,10 @@ def matchstring():
     
     string=""
     
-    for I in range(len(S1)):
-        count=0
-        
-        for J in range(len(S2)):
-            if (J+count) > len(S2)-1 or I+count > len(S1)-1:
-                break
-            
-            elif S1[I+count] == S2[J+count]:
-                string+=S2[J+count]
-                count+=1
-                
-                
-            else:
-                count+=1
-                
+    for I in range(min(len(S1),len(S2))):
+    
+        if S1[-I:] == S2[:I]:
+            string+=S2[:I]
 
                     
             
