@@ -20,9 +20,7 @@ Hence average speed = 180/5 = 36.00 kmph """
 
 
 
-from itertools import count
-from re import S
-from markupsafe import string
+
 
 
 def avgspeed():
@@ -115,26 +113,33 @@ day
 
 """
 def matchstring():
-    S1="mayday"
-    S2="daybreak"
-    
-    string=""
-    
-    for I in range(min(len(S1),len(S2))):
-    
-        if S1[-I:] == S2[:I]:
-            string+=S2[:I]
-
-                    
-            
-    print(string)
-
-
-        
-                
-            
-                
-                
-    #print(string,list11)
+    #S1="Georgeflee"
+    #S2="fleeceblanket"
+    #S1="mayday"
+    #S2="daybreak"
+    S1="redfish"
+    S2="fishtank"
+    #S1="aaaamm"
+    #S2="aaamm"
+    #A=min(len(S1),len(S2))
+    #B=max(len(S1),len(S2))
+    string1=""
+    string2=""
+    for i in range(len(S1)):        
+        for j in range(i,len(S1)):
+            string1+=S1[j]            
+        string1+=" "        
+    for I in reversed(range(0,(len(S2)+1))):
+        for J in range(I):
+            string2+=S2[J]
+        string2+=" "
+    A=string1.split()
+    B=string2.split()
+    print(A,B)
+    for I1 in range(len(A)):
+        for I2 in range(len(B)):
+            if A[I1]==B[I2]:
+                print(B[I2])
+     
 matchstring()
 
