@@ -165,7 +165,7 @@ def untilunderscore():
 #print(ord("0"))
 
 def exalpha():
-    S= "1vedha2giri4dhara5hema"
+    S= "10v22as12a"
     num=""
     name=""    
     for i in S:
@@ -175,15 +175,16 @@ def exalpha():
         else:
             num+=" "
             name+=i    
-    listnum=num.split(" ")
-    listname=name.split(" ")
+    listnum=num.split()
+    listname=name.split()
+    print(listname,listnum)
     count=0
     count1=0
-    for j in range(len(listnum)):
+    """for j in range(len(listnum)):
         if listnum[j-count] != "":            
             continue
         else:
-            listnum.pop(j-count)
+            print(listnum.pop(j-count))
             count+=1
     for J in range(len(listname)):
         if listname[J-count1] != "":
@@ -191,12 +192,14 @@ def exalpha():
         else:
             listname.pop(J-count1)
             count1+=1
+            """
 
     for no1 in range(len(listnum)):
         for numpat in range(int(listnum[no1])):
             print(listname[no1],end="")  
+            continue
     
-#exalpha()
+exalpha()
 
 
 #------------------------------------------------------P6-----------------------------------------
@@ -385,4 +388,4 @@ def ReverseNumberSign():
         print(N)
     elif N[0] != "-" or N[0]=="+":
         print("-"+N)
-ReverseNumberSign()
+#ReverseNumberSign()

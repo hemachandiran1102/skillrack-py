@@ -141,5 +141,85 @@ def matchstring():
             if A[I1]==B[I2]:
                 print(B[I2])
      
-matchstring()
+#matchstring()
 
+###-----------------------------------------------------------------------P5---------------------------------------------------------------------------
+"""Odd Length String - Middle Three Letters An odd length string S is passed as the input. 
+ The middle three letters of S must be printed as the output. 
+ 
+ Input Format: First line will contain the string value S 
+ Output Format: First line will contain the middle three letters of S. 
+ 
+ Boundary Conditions: Length of S is from 5 to 100 
+ 
+ Example Input/Output 1: 
+ Input: 
+        level 
+Output: 
+        eve 
+        
+Example Input/Output 2: 
+
+Input: manager 
+
+Output: nag
+
+"""
+def oddlenofS():
+    S="manager"
+    print(S[(len(S)//2)-1:2+(len(S)//2)])
+#oddlenofS()
+
+##-----------------------------------------------------------------------P6---------------------------------------------------------------------
+
+"""String Word Count The program must accept a string S and print the count of words in S. 
+
+Boundary Condition(s): 1 <= Length of S <= 1000 
+
+Input Format: The first line contains S. 
+
+Output Format: The first line contains the integer value representing the word count. 
+
+Example Input/Output 1: 
+
+Input: I like tea 
+
+Output: 3 
+
+Example Input/Output 2: 
+
+Input: I like coffee very much 
+
+Output: 5
+
+"""
+def StringWrdCount():
+    S=input().split(" ")
+    print(len(S))
+
+
+#--------------------------------------------------------------------P7----------------------------------------------------------------------------
+"""First Letter In Word - Uppercase A string value S is passed as the input. 
+The program must print the first letter of each word in S in upper case. 
+Input Format: First line will contain the string value S 
+Output Format: First line will contain the string value with the first letter of each word in S in upper case. 
+Boundary Conditions: Length of S is from 5 to 500 
+Example Input/Output 1: 
+Input: She is happy. 
+Output: She Is Happy. 
+Example Input/Output 2: 
+Input: joIN tHE ParTY 
+Output: JoIN THE ParTY"""
+print(ord("A"),ord("Z"))
+def FirstLetterInWord():
+    S=input().split()
+    for I in S:
+        if ord(I[0])>=97 and ord(I[0])<=122:
+            
+            print(chr(ord(I[0])-32),end="")
+            print(I[1:],end=" ")
+        else:
+            print(I,end=" ")
+           
+           
+FirstLetterInWord()
