@@ -212,14 +212,19 @@ Input: joIN tHE ParTY
 Output: JoIN THE ParTY"""
 print(ord("A"),ord("Z"))
 def FirstLetterInWord():
-    S=input().split()
+    S=['she', 'is', '', '', '', '', '', '', '', '', '', '', '', 'happy.']
+    print(S)
+
     for I in S:
-        if ord(I[0])>=97 and ord(I[0])<=122:
+        if len(I)==0:
+            print(" ",end="")
+        
+        elif ord(I[0])>=97 and ord(I[0])<=122:
             
             print(chr(ord(I[0])-32),end="")
             print(I[1:],end=" ")
         else:
             print(I,end=" ")
-           
+        
            
 FirstLetterInWord()
