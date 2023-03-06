@@ -23,6 +23,12 @@ Hence average speed = 180/5 = 36.00 kmph """
 
 
 
+
+
+
+from calendar import month
+
+
 def avgspeed():
     L="60@2 120@3"
     list=["60@2",'120@3']
@@ -210,7 +216,7 @@ Output: She Is Happy.
 Example Input/Output 2: 
 Input: joIN tHE ParTY 
 Output: JoIN THE ParTY"""
-print(ord("A"),ord("Z"))
+#print(ord("A"),ord("Z"))
 def FirstLetterInWord():
     S=['she', 'is', '', '', '', '', '', '', '', '', '', '', '', 'happy.']
     print(S)
@@ -227,4 +233,85 @@ def FirstLetterInWord():
             print(I,end=" ")
         
            
-FirstLetterInWord()
+#FirstLetterInWord()
+
+
+#-----------------------------------------------------------P9----------------------------------------------
+"""Alen and Tim both own a tennis grass court and they decide to mow the lawn in and around the court
+ which will cost them Rs.5 per square feet. 
+ Given the amount they spent to mow the lawn and the width of the court, 
+ find the difference between the length of the courts. 
+ 
+ Input Format: First line will contain the amount spent (in Rs) by Alen and Tim separated by space. 
+ Second line will contain the width (in feet) of the courts of Alen and Tim separated by space. 
+ 
+ Output Format: The value (in feet) which is the difference between the length of the courts 
+ rounded off upto two decimal points.
+ 
+ Input Format: First line will contain the amount spent (in Rs) by Alen and Tim separated by space. 
+ Second line will contain the width (in feet) of the courts of Alen and Tim separated by space. 
+ Output Format: The value (in feet) which is the difference between the length of the courts 
+ rounded off upto two decimal points. 
+ 
+ Example Input/Output 1: 
+ Input: 
+    100000 80000 
+    100 80 
+Output: 
+    0.00 
+    
+Explanation: 
+    Area of Alen's court = 100000/5 = 20000 sq.ft. 
+    Length = 20000/100 = 200 
+    Hence the difference = 200-200 = 0 
+    Area of Tim's court = 80000/5 = 16000 sq.ft. 
+    Length = 16000/80 = 200 
+    which when rounded off to decimal places is 0.00 
+    
+Example 
+Input/Output 2: 
+Input: 
+    17500 40000 
+    50 80 
+Length = 8000/80 = 100 
+    
+Output: 
+    30.00
+Explanation: 
+Area of Alen's court = 17500/5 = 3500 sq.ft. 
+Length = 3500/50 = 70 
+Area of Tim's court = 40000/5 = 8000 sq.ft. 
+Hence the difference = 100-70 = 30.00            
+ """
+
+def DiffBetLengthRectangles():
+    A=["17500","40000"]
+
+    B=["50","80"]
+    diff=[]
+    for I in range(len(A)):
+        diff.append((int(A[I])/5)/int(B[I]))
+    sorted(diff)    
+    if diff[1]>diff[0]:
+        print("%.2f" %(diff[1]-diff[0]))
+    else:
+        print("%.2f" %( diff[0]-diff[1]))
+#DiffBetLengthRectangles()   
+
+#--------------------------------------P10------------------------------------------------
+
+"""A date in DD-MM-YYYY format is passed as the input. 
+The program must print the calendar month. 01 - January, 02 - February and so on till 12 - December. 
+Input Format: First line will contain the date in DD-MM-YYYY format. 
+Output Format: The string value denoting the month. 
+Example Input/Output 1: Input: 23-12-2016 Output: December"""
+
+def date_month():
+    #A=input().split("-")
+    A=["30","12","1998"]
+    months=["January","February","March","April","May","June","July","August","September","October","November","December"]
+    for I in range(0,len(months)):
+        print(months[I],I+1,A[1])
+        #if int(A[1])==I+1:
+            #print(months[I])
+date_month()
