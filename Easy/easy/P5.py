@@ -254,7 +254,6 @@ Output:
 
 def RotateString():
     S="truth"
-    N=5
-    for I in range(len(S)):
-        print(S[I-N],end="")
+    N=4
+    print(S[len(S)-N:len(S)+1])
 RotateString()
