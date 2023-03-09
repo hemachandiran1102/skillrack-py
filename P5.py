@@ -185,6 +185,76 @@ def ArrAlpha():
                 list[I],list[J]= list[J],list[I]
             #if list[I] == list[J]:
     print(list)
-ArrAlpha()
+#ArrAlpha()
+#-------------------------------------------------P4----------------------------------------------
+""" Square Matrix - Corner Elements Sum A square matrix of size N×N is passed as the input. 
+ The program must calculate and print the sum of the elements in the corners. 
+ 
+ Input Format: The first line will contain the value of N. 
+ 
+ The next N lines will contain the N values separated by one or more spaces. 
+ 
+ Output Format: The first line will contain the integer value denoting the sum of the elements
+  in the corners. 
+  
+  Boundary Conditions: 2 <= N <= 20 
+  
+  Example 
+  
+  Input/Output 1: 
+  Input: 
+  3 
+  10 90 1 
+   4 22 5 
+  32 8 66
+  
+  Output: 109 Explanation: The sum = 10+1+66+32 = 109
+  
+  
+  
+  """           
 
-            
+def sumOfMatrix():
+    #N=int(input())
+    list1=[[10, 90, 1], [4, 22, 5], [32, 8, 66]]
+    #for I in range(3):
+        #I = list(map(int,input().split()))
+        #list1.append(I)
+    print(list1[0][0]+list1[0][len(list1[0])-1]+list1[len(list1)-1][0]+list1[len(list1)-1][len(list1[0])-1  ])
+#sumOfMatrix()
+
+#----------------------------------------------------P5-------------------------------------------
+
+"""Rotate String - N Positions A string S of length L is passed as the input. 
+The program must rotate the string S by N position in forward direction and 
+print the result as the output. 
+
+Input Format: The first line will contain the value of S. The second line will contain N. 
+
+Output Format: The first line will contain the rotated string value. 
+
+Boundary Conditions: The length L of the string S is from 3 to 100. 
+0 <= N <= L 
+
+Example Input/Output 1: 
+
+Input: 
+    cricket 
+    2 
+Output: 
+    etcrick 
+Example Input/Output 2: 
+
+Input: 
+    truth 
+    5 
+Output:
+    truth
+"""
+
+def RotateString():
+    S="truth"
+    N=5
+    for I in range(len(S)):
+        print(S[I-N],end="")
+RotateString()
