@@ -256,4 +256,42 @@ def RotateString():
     S="truth"
     N=4
     print(S[len(S)-N:len(S)+1])
-RotateString()
+#RotateString()
+
+#-----------------------------------------------------------P6----------------------------------------
+"""Next Prime Number A number N is passed as the input. 
+The program must print the next immediate prime number. 
+Input Format: The first line will contain N. 
+Output Format: The first line will contain the integer value of next immediate prime number. 
+Boundary Conditions: 1 <= N <= 999999 Example 
+Input/Output 1: 
+Input: 11 
+Output: 13 
+
+Example 
+Input/Output 2:
+Input: 2 
+Output: 3
+"""
+
+def NextPrime():
+    N=11
+
+    j=2
+    while j <= N and j >=2:
+        
+        if j<N:
+            
+            if N%j!=0:
+                print(N,j)
+                break
+    
+        if j==N:
+            j=2
+            N+=1
+        j+=1
+        
+        
+        
+NextPrime()
+        
