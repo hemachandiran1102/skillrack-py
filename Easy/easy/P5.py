@@ -273,25 +273,25 @@ Input/Output 2:
 Input: 2 
 Output: 3
 """
-
-def NextPrime():
-    N=11
-
-    j=2
-    while j <= N and j >=2:
+N=7
+def checkprime(N):
+    for i in range(2,N):
+        if N%i==0:
+            print(N)           
+            return False
         
-        if j<N:
+def findnextprime(N):
+    A=0
+    while True:
+        
+        if checkprime(N) == False:
+            A+=N+1
+            print(N)
+        else:
+            print(A)
             
-            if N%j!=0:
-                print(N,j)
-                break
-    
-        if j==N:
-            j=2
-            N+=1
-        j+=1
         
-        
-        
-NextPrime()
+            
+checkprime(N)
+findnextprime(N)
         
