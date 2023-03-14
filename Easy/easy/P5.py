@@ -23,6 +23,9 @@ Explanation: Only 5 multiplied with 4 gives 20. Hence - must be replaced with *.
 Example 2: Input: 999+9=111 Output: / Explanation: Only 999 divided by 9 gives 111. Hence + must be replaced with /."""
 
 #print(ord("*"),ord("/"),ord("+"),ord("-"))
+
+
+
 def idfycrtop():
     E=["808-100","98"]
     
@@ -273,25 +276,39 @@ Input/Output 2:
 Input: 2 
 Output: 3
 """
-N=7
+N=3371
 def checkprime(N):
+
+    if N == 1:
+        #print(N,"prime")
+        return True
+    if N == 0:
+        #print (N,"not prime")
+        return False
     for i in range(2,N):
+       
         if N%i==0:
-            print(N)           
+            #print(N,"not prime")           
             return False
+            break
         
-def findnextprime(N):
-    A=0
-    while True:
-        
-        if checkprime(N) == False:
-            A+=N+1
-            print(N)
         else:
-            print(A)
+            #print(N,"prime")
+            return True
+            break
+def findnextprime(N):
+    
+    while True:
+        N=N+1
+        if checkprime(N)==True:
+            print(N)
+            break
+        
+        
+        
             
         
             
-checkprime(N)
+#checkprime(N)
 findnextprime(N)
         
