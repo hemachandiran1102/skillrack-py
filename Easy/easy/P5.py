@@ -276,39 +276,26 @@ Input/Output 2:
 Input: 2 
 Output: 3
 """
-N=3371
+N=369
 def checkprime(N):
-
-    if N == 1:
-        #print(N,"prime")
-        return True
-    if N == 0:
-        #print (N,"not prime")
+    if (N==1) or (N==0):
         return False
-    for i in range(2,N):
-       
-        if N%i==0:
-            #print(N,"not prime")           
+    for i in range(2,(N//2)+1):
+        if (N%i==0):
             return False
-            break
-        
-        else:
-            #print(N,"prime")
-            return True
-            break
-def findnextprime(N):
-    
+    return True
+def nextprime(N):
+    A=1
     while True:
-        N=N+1
-        if checkprime(N)==True:
-            print(N)
+        if checkprime(N+A):
+            print(N+A)
             break
-        
-        
+        else:
+            A+=1
+nextprime(N)
         
             
         
             
-#checkprime(N)
-findnextprime(N)
+
         
