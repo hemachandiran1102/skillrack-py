@@ -276,13 +276,13 @@ Input/Output 2:
 Input: 2 
 Output: 3
 """
-N=369
+#N=369
 def checkprime(N):
     if (N==1) or (N==0):
         return False
     for i in range(2,(N//2)+1):
         if (N%i==0):
-            print(i,N)
+            
             return False
     return True
 def nextprime(N):
@@ -294,7 +294,7 @@ def nextprime(N):
         else:
             A+=1
 #nextprime(N)
-checkprime(N)
+#checkprime(N)
 
 #------------------------------------------------------P7------------------------------------------------------------
 """Count the primes in a range. Two whole numbers N1 and N2 are passed as input. 
@@ -324,10 +324,86 @@ Output:
 Explanation: The prime numbers within the range 38 to 70 are 
 41, 43, 47, 53, 59, 61, 67"""        
             
-def primecheck(N):
-    if N==0 or N==1:
-        return False
+def rangeprimecheck(N):
+    for i in range(N1,N2+1):
+        if checkprime(i):
+            print(i,end=" ")
     
             
+#-----------------------------------------P8------------------------------------------
+"""Alternate letters in uppercase A str‌ing S (only alphabets) is passed as input. 
+The printed output should contain alphabets in odd positions in each word in uppercase 
+and alphabets in even positions in each word in lowercase. 
+Input Format: The first line will contain S. 
+Output Format: The first line will contain the resultant string value based on the 
+conditions provided. 
+Boundary Conditions: Length of S is from 3 to 100. 
+Example Input/Output 1: 
+Input: tREE GiVES us fruiTS 
+Output: TrEe GiVeS Us FrUiTs 
+Example Input/Output 
+2: Input: 
+FLoweR iS beauTIFUL 
+Output: FlOwEr Is BeAuTiFuL"""
 
-        
+def altupper():
+    s=list(input().split(" "))
+    for i in range(0,len(s)):
+        l=list(s[i])
+        for j in range(0,len(l)):
+            if j%2==0:
+                print(l[j].upper(),end="")
+            else:
+                print(l[j].lower(),end="")
+    print(" ",end="")
+
+#---------------------------------------P10---------------------------------------------------
+"""Concatenate Strings Alphabetically Two string values S1 and S2 are passed as the input. 
+The program must concatenate them depending on which string comes first 
+in the alphabetical order. 
+Input Format: 
+The first line will contain S1. 
+The second line will contain S2 
+
+Output Format: 
+
+The first line will contain the concatenated string value. 
+
+Boundary Conditions: 
+Length of S1 and S2 is from 3 to 100. 
+
+Example Input/Output 1: 
+
+Input: 
+apple 
+orange 
+
+Output: 
+
+appleorange 
+
+Example 
+
+Input/Output 2: 
+
+Input: 
+zoo
+tiger 
+
+Output: 
+
+tigerzoo
+
+"""        
+def concatestringsAlpha():
+    #S1="zoo"
+    #S2="tiger"
+    S1="bat"
+    S2="aristo"
+    print(ord("a"),ord(S1[0]))
+    if ord(S1[0]) > ord(S2[0]):
+        print(S2 + S1)
+    else:
+        print (S1 + S2)
+
+concatestringsAlpha()
