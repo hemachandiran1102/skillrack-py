@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Sid": "Stmt1684335788300",
+          "Action": [
+              "s3:ListBucket",
+              "s3:ListAllMyBuckets"
+          ],
+          "Effect": "Allow",
+          "Resource": "*"
+      },
+      {
+          "Sid": "Stmt1684335770001",
+          "Action": [
+              "s3:PutObject",
+              "s3:GetObject"
+          ],
+          "Effect": "Allow",
+          "Resource": "arn:aws:s3:::ir-datacollection1/midas/*"
+      }
+  ]
+}
